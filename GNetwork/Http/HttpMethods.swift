@@ -1,0 +1,10 @@
+public enum HttpMethod: String {
+    case GET = "GET"
+    case POST = "POST"
+    case PUT = "PUT"
+    case DELETE = "DELETE"
+    
+    var type: String {
+        return self.rawValue
+    }
+}
