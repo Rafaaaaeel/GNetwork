@@ -1,7 +1,13 @@
 public struct Token: Codable {
-    public let accessToken: String
-    public let expiresIn: Int
-    public let tokenType: String
+    public var accessToken: String
+    public var expiresIn: Int
+    public var tokenType: String
+    
+    public init(accessToken: String, expiresIn: Int, tokenType: String) {
+        self.accessToken = accessToken
+        self.expiresIn = expiresIn
+        self.tokenType = tokenType
+    }
     
     enum CodingKeys: String, CodingKey {
         case accessToken = "access_token"

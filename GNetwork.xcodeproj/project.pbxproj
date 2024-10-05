@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2753C9272CA7B66700A71034 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2753C9262CA7B65900A71034 /* Network.swift */; };
 		2753C9292CA7C24500A71034 /* HttpMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2753C9282CA7C23E00A71034 /* HttpMethods.swift */; };
 		2753C92B2CA7C2B200A71034 /* Url.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2753C92A2CA7C2AA00A71034 /* Url.swift */; };
 		2753C92D2CA85B5700A71034 /* NetworkException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2753C92C2CA85B5700A71034 /* NetworkException.swift */; };
 		2753C92F2CA85B7300A71034 /* HttpException.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2753C92E2CA85B6D00A71034 /* HttpException.swift */; };
 		2753C9312CA9B0F400A71034 /* HttpException+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2753C9302CA9B0EA00A71034 /* HttpException+Extensions.swift */; };
 		2753C93A2CA9B61800A71034 /* GNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27A4E0D52C98ED0700F6CE8B /* GNetwork.framework */; };
-		2753C9442CA9BD9200A71034 /* Network+Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2753C9432CA9BD8D00A71034 /* Network+Protocols.swift */; };
 		2753C94B2CA9BE3100A71034 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2753C94A2CA9BE2600A71034 /* URLSessionProtocol.swift */; };
 		2753C94E2CA9BE4700A71034 /* URLSession+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2753C94D2CA9BE4100A71034 /* URLSession+Extensions.swift */; };
 		2753C95D2CAA1F8200A71034 /* GCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2753C95C2CAA1F8200A71034 /* GCore.framework */; };
 		2753C95E2CAA1F8200A71034 /* GCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2753C95C2CAA1F8200A71034 /* GCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2753C9622CAB7AE000A71034 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2753C9612CAB7AE000A71034 /* Token.swift */; };
+		2755D3C02CB0E3B60099126E /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755D3BF2CB0E3B30099126E /* Secrets.swift */; };
+		2755D3C22CB0E7370099126E /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755D3C12CB0E70A0099126E /* NetworkManager.swift */; };
+		2755D3C42CB0EAAD0099126E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755D3C32CB0EAAA0099126E /* Settings.swift */; };
+		2755D3C62CB0EB520099126E /* HttpBridge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755D3C52CB0EB230099126E /* HttpBridge.swift */; };
+		2755D3C82CB0EC440099126E /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755D3C72CB0EC410099126E /* TokenManager.swift */; };
+		2755D3CE2CB1A28D0099126E /* TokenManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755D3CD2CB1A27C0099126E /* TokenManagerProtocol.swift */; };
+		2755D3D02CB1A2AB0099126E /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755D3CF2CB1A2A70099126E /* NetworkManagerProtocol.swift */; };
+		2755D3D32CB1A2D50099126E /* HttpBridgeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755D3D22CB1A2CF0099126E /* HttpBridgeProtocol.swift */; };
 		27A4E0D92C98ED0700F6CE8B /* GNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 27A4E0D82C98ED0700F6CE8B /* GNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -48,18 +54,24 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		2753C9262CA7B65900A71034 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		2753C9282CA7C23E00A71034 /* HttpMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethods.swift; sourceTree = "<group>"; };
 		2753C92A2CA7C2AA00A71034 /* Url.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Url.swift; sourceTree = "<group>"; };
 		2753C92C2CA85B5700A71034 /* NetworkException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkException.swift; sourceTree = "<group>"; };
 		2753C92E2CA85B6D00A71034 /* HttpException.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpException.swift; sourceTree = "<group>"; };
 		2753C9302CA9B0EA00A71034 /* HttpException+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HttpException+Extensions.swift"; sourceTree = "<group>"; };
 		2753C9362CA9B61800A71034 /* GNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		2753C9432CA9BD8D00A71034 /* Network+Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network+Protocols.swift"; sourceTree = "<group>"; };
 		2753C94A2CA9BE2600A71034 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
 		2753C94D2CA9BE4100A71034 /* URLSession+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+Extensions.swift"; sourceTree = "<group>"; };
 		2753C95C2CAA1F8200A71034 /* GCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2753C9612CAB7AE000A71034 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		2755D3BF2CB0E3B30099126E /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		2755D3C12CB0E70A0099126E /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		2755D3C32CB0EAAA0099126E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		2755D3C52CB0EB230099126E /* HttpBridge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpBridge.swift; sourceTree = "<group>"; };
+		2755D3C72CB0EC410099126E /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		2755D3CD2CB1A27C0099126E /* TokenManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManagerProtocol.swift; sourceTree = "<group>"; };
+		2755D3CF2CB1A2A70099126E /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
+		2755D3D22CB1A2CF0099126E /* HttpBridgeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpBridgeProtocol.swift; sourceTree = "<group>"; };
 		27A4E0D52C98ED0700F6CE8B /* GNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A4E0D82C98ED0700F6CE8B /* GNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GNetwork.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,19 +103,21 @@
 		2753C9402CA9BB4B00A71034 /* Http */ = {
 			isa = PBXGroup;
 			children = (
+				2755D3D22CB1A2CF0099126E /* HttpBridgeProtocol.swift */,
+				2755D3C52CB0EB230099126E /* HttpBridge.swift */,
 				2753C9302CA9B0EA00A71034 /* HttpException+Extensions.swift */,
 				2753C9282CA7C23E00A71034 /* HttpMethods.swift */,
 			);
 			path = Http;
 			sourceTree = "<group>";
 		};
-		2753C9412CA9BB5300A71034 /* Network */ = {
+		2753C9412CA9BB5300A71034 /* Token */ = {
 			isa = PBXGroup;
 			children = (
-				2753C9432CA9BD8D00A71034 /* Network+Protocols.swift */,
-				2753C9262CA7B65900A71034 /* Network.swift */,
+				2755D3CD2CB1A27C0099126E /* TokenManagerProtocol.swift */,
+				2755D3C72CB0EC410099126E /* TokenManager.swift */,
 			);
-			path = Network;
+			path = Token;
 			sourceTree = "<group>";
 		};
 		2753C9452CA9BDCC00A71034 /* Url */ = {
@@ -152,9 +166,19 @@
 		2753C9602CAB7AD300A71034 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2755D3BF2CB0E3B30099126E /* Secrets.swift */,
 				2753C9612CAB7AE000A71034 /* Token.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		2755D3D12CB1A2B40099126E /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				2755D3C12CB0E70A0099126E /* NetworkManager.swift */,
+				2755D3CF2CB1A2A70099126E /* NetworkManagerProtocol.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		27A4E0CB2C98ED0700F6CE8B = {
@@ -180,10 +204,12 @@
 			isa = PBXGroup;
 			children = (
 				27A4E0D82C98ED0700F6CE8B /* GNetwork.h */,
+				2755D3C32CB0EAAA0099126E /* Settings.swift */,
+				2755D3D12CB1A2B40099126E /* Network */,
 				2753C9602CAB7AD300A71034 /* Models */,
 				2753C9482CA9BE0000A71034 /* Core */,
 				2753C9452CA9BDCC00A71034 /* Url */,
-				2753C9412CA9BB5300A71034 /* Network */,
+				2753C9412CA9BB5300A71034 /* Token */,
 				2753C9402CA9BB4B00A71034 /* Http */,
 			);
 			path = GNetwork;
@@ -257,6 +283,7 @@
 				TargetAttributes = {
 					2753C9352CA9B61800A71034 = {
 						CreatedOnToolsVersion = 16.0;
+						LastSwiftMigration = 1600;
 					};
 					27A4E0D42C98ED0700F6CE8B = {
 						CreatedOnToolsVersion = 15.4;
@@ -312,16 +339,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2755D3C82CB0EC440099126E /* TokenManager.swift in Sources */,
+				2755D3D32CB1A2D50099126E /* HttpBridgeProtocol.swift in Sources */,
 				2753C9292CA7C24500A71034 /* HttpMethods.swift in Sources */,
+				2755D3D02CB1A2AB0099126E /* NetworkManagerProtocol.swift in Sources */,
 				2753C9622CAB7AE000A71034 /* Token.swift in Sources */,
 				2753C92B2CA7C2B200A71034 /* Url.swift in Sources */,
-				2753C9442CA9BD9200A71034 /* Network+Protocols.swift in Sources */,
 				2753C92D2CA85B5700A71034 /* NetworkException.swift in Sources */,
+				2755D3C62CB0EB520099126E /* HttpBridge.swift in Sources */,
 				2753C94B2CA9BE3100A71034 /* URLSessionProtocol.swift in Sources */,
 				2753C94E2CA9BE4700A71034 /* URLSession+Extensions.swift in Sources */,
 				2753C9312CA9B0F400A71034 /* HttpException+Extensions.swift in Sources */,
+				2755D3CE2CB1A28D0099126E /* TokenManagerProtocol.swift in Sources */,
 				2753C92F2CA85B7300A71034 /* HttpException.swift in Sources */,
-				2753C9272CA7B66700A71034 /* Network.swift in Sources */,
+				2755D3C22CB0E7370099126E /* NetworkManager.swift in Sources */,
+				2755D3C42CB0EAAD0099126E /* Settings.swift in Sources */,
+				2755D3C02CB0E3B60099126E /* Secrets.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +372,7 @@
 		2753C93E2CA9B61800A71034 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 56293NUR34;
@@ -348,6 +382,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rafael.pires.GNetworkTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -356,6 +391,7 @@
 		2753C93F2CA9B61800A71034 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 56293NUR34;
@@ -522,6 +558,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rafael.pires.GNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -557,6 +597,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rafael.pires.GNetwork;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_INSTALL_OBJC_HEADER = NO;
 				SWIFT_VERSION = 5.0;
