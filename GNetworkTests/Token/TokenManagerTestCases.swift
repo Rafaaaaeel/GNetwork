@@ -11,7 +11,7 @@ class TokenManagerTestCases: XCTestCase {
     override func setUp() {
         httpBridgeStub      = .init()
         clientSettingsMock  = .init()
-        
+        clientSettingsMock.set(.dummy() as Secrets)
         sut = .init(http: httpBridgeStub, client: clientSettingsMock)
     }
     

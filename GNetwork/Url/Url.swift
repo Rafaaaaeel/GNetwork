@@ -27,7 +27,7 @@ internal class Url {
         
         internal var components : URLComponents?
         
-        internal var request    : URLRequest = URLRequest(url: URL(string: "")!)
+        internal var request    : URLRequest = URLRequest(url: URL(string: "https:\\localhost:8080")!)
         
         internal var headers    : [String : String]?
         
@@ -75,15 +75,19 @@ internal class Url {
             return self
         }
         
-        internal func add(_ secrets: Secrets) -> Builder {
+        internal func set(_ secrets: Secrets) -> Builder {
             
-            let headers = [
+            let queries = [
                 "client_id": secrets.clientId,
-                "client_secrets": secrets.clientSecret,
-                "grand_type": secrets.grantType,
+                "client_secret": secrets.clientSecret,
+                "grant_type": secrets.grantType,
             ]
             
-            headers.forEach { request.addValue($1, forHTTPHeaderField: $0) }
+            if components?.queryItems == nil {
+                components?.queryItems = []
+            }
+            
+            queries.forEach { components?.queryItems?.append(URLQueryItem(name: $0, value: $1)) }
             
             return self
         }
@@ -100,10 +104,10 @@ internal class Url {
             return self
         }
         
-        internal func add(_ body: Encodable?) -> Builder {
+        internal func add(_ body: Data?) -> Builder {
             guard let body else { return self }
             
-            request.httpBody = try? JSONEncoder().encode(body)
+            request.httpBody = body
             
             return self
         }

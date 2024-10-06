@@ -36,7 +36,7 @@ class NetworkManagerTestCases: XCTestCase {
         // Then
         XCTAssertEqual(response.method, "POST")
         XCTAssertEqual(response.url, "https://api.igdb.com/v4")
-        XCTAssertEqual(response.headers, ["Authorization": "abc", "Client-ID": "dfg"])
+        XCTAssertEqual(response.headers, ["Authorization": "Bearer abc", "Client-ID": "dfg"])
     }
     
     func test_request_when_has_endpoint() async {

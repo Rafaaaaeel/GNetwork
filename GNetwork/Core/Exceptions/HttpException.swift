@@ -2,6 +2,7 @@ public enum HttpException: Error, CustomNSError {
     
     case badRequest
     case unauthorized
+    case forbidden
     case notFound
     case conflict
     case gone
@@ -11,6 +12,7 @@ public enum HttpException: Error, CustomNSError {
     static public let map = [
         400 : HttpException.badRequest,
         401 : HttpException.unauthorized,
+        403 : HttpException.forbidden,
         404 : HttpException.badRequest,
         409 : HttpException.conflict,
         410 : HttpException.gone,

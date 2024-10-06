@@ -14,16 +14,20 @@ public class HttpBridge: HttpBridgeProtocol {
                 throw NetworkException.invalidResponse
             }
             
-            guard 200..<599 ~= httpResponse.statusCode else {
+            GLogger.log(request, httpResponse)
+            
+            guard 200..<399 ~= httpResponse.statusCode else {
                 throw HttpException.map[httpResponse.statusCode].orUnknown
             }
             
             let decodable = try JSONDecoder().decode(T.self, from: data)
             
             return decodable
-        } catch {
-            throw NetworkException.serializationError
+        } catch let error {
+            GLogger.log(error)
+            throw error
         }
+       
     }
     
 }

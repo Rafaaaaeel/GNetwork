@@ -16,7 +16,7 @@ public class NetworkManager: NetworkManagerProtocol {
     
     public func request<T: Decodable>(headers: Params? = nil,
                                       queries: Params? = nil,
-                                      body: Encodable? = nil,
+                                      body: Data? = nil,
                                       method: HttpMethod = .post,
                                       endpoint: String = .empty) async throws -> T {
         

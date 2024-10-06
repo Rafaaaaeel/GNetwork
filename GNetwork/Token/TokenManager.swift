@@ -30,7 +30,7 @@ public class TokenManager: TokenManagerProtocol {
     private func token() async throws -> Token {
         let request = Url.Builder()
             .set("https://id.twitch.tv/oauth2/token")
-            .add(client.secrets)
+            .set(client.secrets!)
             .set(.post)
             .build()
         
