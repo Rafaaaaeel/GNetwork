@@ -2,40 +2,40 @@ import GCore
 
 internal class Url {
     
-    internal let components: URLComponents?
+    internal let components : URLComponents?
     
-    internal let request: URLRequest
+    internal let request    : URLRequest
     
-    internal let headers: [String : String]?
+    internal let headers    : [String : String]?
     
-    internal let queries: [String : String]?
+    internal let queries    : [String : String]?
     
-    internal let body: Encodable?
+    internal let body       : Encodable?
     
-    internal let method: HttpMethod
+    internal let method     : HttpMethod
     
     private init(components: URLComponents?, request: URLRequest, headers: [String : String]?, queries: [String : String]?, body: Encodable?, method: HttpMethod) {
-        self.components = components
-        self.request = request
-        self.headers = headers
-        self.queries = queries
-        self.body = body
-        self.method = method
+        self.components     = components
+        self.request        = request
+        self.headers        = headers
+        self.queries        = queries
+        self.body           = body
+        self.method         = method
     }
     
     internal class Builder {
-        internal var components: URLComponents?
         
-        internal var request: URLRequest = URLRequest(url: URL(string: "https:://localhost:8080/api")!)
+        internal var components : URLComponents?
         
-        internal var headers: [String : String]?
+        internal var request    : URLRequest = URLRequest(url: URL(string: "")!)
         
-        internal var queries: [String : String]?
+        internal var headers    : [String : String]?
         
-        internal var body: Encodable?
+        internal var queries    : [String : String]?
         
-        internal var method: HttpMethod  = .get
+        internal var body       : Encodable?
         
+        internal var method     : HttpMethod  = .get
         
         internal func add(_ headers: Params?) -> Builder {
             guard let headers else { return self }
@@ -92,7 +92,7 @@ internal class Url {
             
             let headers = [
                 "Client-ID": secrets.clientId,
-                "Authorization": token.accessToken,
+                "Authorization": "Bearer \(token.accessToken)",
             ]
             
             headers.forEach { request.addValue($1, forHTTPHeaderField: $0) }
@@ -115,14 +115,6 @@ internal class Url {
             
             return request
         }
-    }
-    
-}
-
-extension String {
-    
-    var queryFormatted: String {
-        return self.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? self
     }
     
 }

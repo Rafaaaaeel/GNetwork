@@ -5,6 +5,7 @@ public enum HttpException: Error, CustomNSError {
     case notFound
     case conflict
     case gone
+    case tooMany
     case unknown
     
     static public let map = [
@@ -12,7 +13,8 @@ public enum HttpException: Error, CustomNSError {
         401 : HttpException.unauthorized,
         404 : HttpException.badRequest,
         409 : HttpException.conflict,
-        410 : HttpException.gone
+        410 : HttpException.gone,
+        429 : HttpException.tooMany
     ]
 
     var localizedDescription: String{

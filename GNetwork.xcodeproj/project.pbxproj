@@ -26,6 +26,7 @@
 		2755D3CE2CB1A28D0099126E /* TokenManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755D3CD2CB1A27C0099126E /* TokenManagerProtocol.swift */; };
 		2755D3D02CB1A2AB0099126E /* NetworkManagerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755D3CF2CB1A2A70099126E /* NetworkManagerProtocol.swift */; };
 		2755D3D32CB1A2D50099126E /* HttpBridgeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755D3D22CB1A2CF0099126E /* HttpBridgeProtocol.swift */; };
+		2755D4032CB2620B0099126E /* ClientSettingsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2755D4022CB262020099126E /* ClientSettingsProtocols.swift */; };
 		27A4E0D92C98ED0700F6CE8B /* GNetwork.h in Headers */ = {isa = PBXBuildFile; fileRef = 27A4E0D82C98ED0700F6CE8B /* GNetwork.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -72,6 +73,7 @@
 		2755D3CD2CB1A27C0099126E /* TokenManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManagerProtocol.swift; sourceTree = "<group>"; };
 		2755D3CF2CB1A2A70099126E /* NetworkManagerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerProtocol.swift; sourceTree = "<group>"; };
 		2755D3D22CB1A2CF0099126E /* HttpBridgeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpBridgeProtocol.swift; sourceTree = "<group>"; };
+		2755D4022CB262020099126E /* ClientSettingsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientSettingsProtocols.swift; sourceTree = "<group>"; };
 		27A4E0D52C98ED0700F6CE8B /* GNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		27A4E0D82C98ED0700F6CE8B /* GNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GNetwork.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -181,6 +183,15 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		2755D4002CB261F40099126E /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2755D3C32CB0EAAA0099126E /* Settings.swift */,
+				2755D4022CB262020099126E /* ClientSettingsProtocols.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		27A4E0CB2C98ED0700F6CE8B = {
 			isa = PBXGroup;
 			children = (
@@ -204,7 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				27A4E0D82C98ED0700F6CE8B /* GNetwork.h */,
-				2755D3C32CB0EAAA0099126E /* Settings.swift */,
+				2755D4002CB261F40099126E /* Settings */,
 				2755D3D12CB1A2B40099126E /* Network */,
 				2753C9602CAB7AD300A71034 /* Models */,
 				2753C9482CA9BE0000A71034 /* Core */,
@@ -353,6 +364,7 @@
 				2755D3CE2CB1A28D0099126E /* TokenManagerProtocol.swift in Sources */,
 				2753C92F2CA85B7300A71034 /* HttpException.swift in Sources */,
 				2755D3C22CB0E7370099126E /* NetworkManager.swift in Sources */,
+				2755D4032CB2620B0099126E /* ClientSettingsProtocols.swift in Sources */,
 				2755D3C42CB0EAAD0099126E /* Settings.swift in Sources */,
 				2755D3C02CB0E3B60099126E /* Secrets.swift in Sources */,
 			);

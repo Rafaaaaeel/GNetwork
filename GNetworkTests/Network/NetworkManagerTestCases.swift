@@ -5,30 +5,28 @@ class NetworkManagerTestCases: XCTestCase {
     
     var sut: NetworkManager!
     
-    // http stub
-    var httpBridgeStub: HttpBridgeStub!
-    // client mock
-    var clientSettingsFake: ClientSettingsFake!
-    // tokenManager mock
-    var tokenManagerFake: TokenManagerFake!
+
+    var httpBridgeStub      : HttpBridgeStub!
+    var clientSettingsFake  : ClientSettingsFake!
+    var tokenManagerFake    : TokenManagerFake!
     
     override func setUp() {
-        httpBridgeStub = .init()
-        clientSettingsFake = .init()
-        tokenManagerFake = .init()
+        httpBridgeStub      = .init()
+        clientSettingsFake  = .init()
+        tokenManagerFake    = .init()
         
-        clientSettingsFake.set(.dummy(clientId: "dfg", clientSecret: "xyz", grantType: "acess")
-        )
+        clientSettingsFake.set(.dummy(clientId: "dfg",
+                                      clientSecret: "xyz",
+                                      grantType: "acess"))
         
         sut = .init(http: httpBridgeStub, client: clientSettingsFake, tokenManager: tokenManagerFake)
     }
     
     override func tearDown() {
-        sut = nil
-        
-        httpBridgeStub = nil
-        clientSettingsFake = nil
-        tokenManagerFake = nil
+        sut                 = nil
+        httpBridgeStub      = nil
+        clientSettingsFake  = nil
+        tokenManagerFake    = nil
     }
     
     func test_request_default() async {

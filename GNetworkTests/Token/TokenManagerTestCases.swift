@@ -3,23 +3,22 @@ import XCTest
 
 class TokenManagerTestCases: XCTestCase {
     
-    var sut: TokenManager!
+    var sut                 : TokenManager!
     
-    var httpBridgeStub: HttpBridgeStub!
-    var clientSettingsMock: ClientSettingsFake!
+    var httpBridgeStub      : HttpBridgeStub!
+    var clientSettingsMock  : ClientSettingsFake!
     
     override func setUp() {
-        httpBridgeStub = .init()
-        clientSettingsMock = .init()
+        httpBridgeStub      = .init()
+        clientSettingsMock  = .init()
         
         sut = .init(http: httpBridgeStub, client: clientSettingsMock)
     }
     
     override func tearDown() {
-        httpBridgeStub = nil
-        clientSettingsMock = nil
-        
-        sut = nil
+        sut                 = nil
+        httpBridgeStub      = nil
+        clientSettingsMock  = nil
     }
     
     func test_refreshToken_whenTokenIsValid_shouldReturnToken() async {

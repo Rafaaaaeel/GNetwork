@@ -1,11 +1,11 @@
 public class TokenManager: TokenManagerProtocol {
     
-    private let http: HttpBridgeProtocol
+    private let http    : HttpBridgeProtocol
     
-    private let client: ClientSettingsProtocol
+    private let client  : ClientSettingsProtocol
     
     public init(http: HttpBridgeProtocol = HttpBridge(), client: ClientSettingsProtocol = Settings.shared.client) {
-        self.http = http
+        self.http   = http
         self.client = client
     }
     
@@ -30,6 +30,7 @@ public class TokenManager: TokenManagerProtocol {
     private func token() async throws -> Token {
         let request = Url.Builder()
             .set("https://id.twitch.tv/oauth2/token")
+            .add(client.secrets)
             .set(.post)
             .build()
         
