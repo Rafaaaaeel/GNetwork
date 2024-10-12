@@ -1,6 +1,6 @@
 import GCore
 
-internal class Url {
+final internal class Url {
     
     internal let components : URLComponents?
     
@@ -23,7 +23,7 @@ internal class Url {
         self.method         = method
     }
     
-    internal class Builder {
+    final internal class Builder {
         
         internal var components : URLComponents?
         
@@ -52,8 +52,8 @@ internal class Url {
         }
         
         internal func add(_ endpoint: String) -> Builder {
-            self.components?.path += endpoint
-            
+            self.components?.path += endpoint.endpointFormat
+        
             return self
         }
         

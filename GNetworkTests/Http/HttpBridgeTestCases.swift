@@ -6,7 +6,6 @@ class HttpBridgeTestCases: XCTestCase {
     var sut: HttpBridge!
     
     
-    
     override func setUp() {
         
     }

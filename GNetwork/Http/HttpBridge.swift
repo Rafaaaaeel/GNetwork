@@ -1,4 +1,6 @@
-public class HttpBridge: HttpBridgeProtocol {
+import GCore
+
+public final class HttpBridge: HttpBridgeProtocol {
     
     private let session: URLSessionProtocol
     
@@ -28,6 +30,16 @@ public class HttpBridge: HttpBridgeProtocol {
             throw error
         }
        
+    }
+    
+    public func execute<T: Decodable>(with mock: Data) async throws -> T {
+
+        try await Task.sleep(for: .seconds(2))
+        
+        let result = try? JSONDecoder().decode(T.self, from: mock)
+        
+        return result!
+        
     }
     
 }

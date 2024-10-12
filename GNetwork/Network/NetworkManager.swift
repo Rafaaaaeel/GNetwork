@@ -1,6 +1,6 @@
 import GCore
 
-public class NetworkManager: NetworkManagerProtocol {
+final public class NetworkManager : NetworkManagerProtocol {
     
     private let http            :   HttpBridgeProtocol
     
@@ -8,17 +8,23 @@ public class NetworkManager: NetworkManagerProtocol {
     
     private let tokenManager    :   TokenManagerProtocol
     
-    public init(http: HttpBridgeProtocol = HttpBridge(), client: ClientSettingsProtocol = Settings.shared.client, tokenManager: TokenManagerProtocol = TokenManager()) {
+    public init(
+        http            : HttpBridgeProtocol        = HttpBridge(),
+        client          : ClientSettingsProtocol    = Settings.shared.client,
+        tokenManager    : TokenManagerProtocol      = TokenManager()
+    ) {
         self.http           =   http
         self.client         =   client
         self.tokenManager   =   tokenManager
     }
     
-    public func request<T: Decodable>(headers: Params? = nil,
-                                      queries: Params? = nil,
-                                      body: Data? = nil,
-                                      method: HttpMethod = .post,
-                                      endpoint: String = .empty) async throws -> T {
+    public func request<T: Decodable>(
+        headers: Params?    = nil,
+        queries: Params?    = nil,
+        body: Data?         = nil,
+        method: HttpMethod  = .post,
+        endpoint: String    = .empty
+    ) async throws -> T {
         
         let request = Url.Builder()
             .set("https://api.igdb.com/v4")
@@ -27,6 +33,7 @@ public class NetworkManager: NetworkManagerProtocol {
             .add(endpoint)
             .add(headers)
             .add(body)
+            .add("fields *;".data(using: .utf8)!)
             .authorization(try await tokenManager.refreshToken(), client.secrets!)
             .build()
         
@@ -34,6 +41,11 @@ public class NetworkManager: NetworkManagerProtocol {
         
         return data
     }
+    
+    public func request<T: Decodable>(with mock: Data) async throws -> T {
+        return try! await http.execute(with: mock)
+    }
+    
 }
 
 

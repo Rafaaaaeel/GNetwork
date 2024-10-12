@@ -1,4 +1,4 @@
-public class TokenManager: TokenManagerProtocol {
+public final class TokenManager: TokenManagerProtocol {
     
     private let http    : HttpBridgeProtocol
     

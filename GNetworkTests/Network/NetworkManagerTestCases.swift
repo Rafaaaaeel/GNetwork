@@ -50,6 +50,17 @@ class NetworkManagerTestCases: XCTestCase {
         XCTAssertEqual(response.url, "https://api.igdb.com/v4/games")
     }
     
+    func test_request_when_has_endpoint_but_without_slash() async {
+        // Given
+        let endpoint = "games"
+        
+        // When
+        let response: HttpMock = try! await sut.request(endpoint: endpoint)
+        
+        // Then
+        XCTAssertEqual(response.url, "https://api.igdb.com/v4/games")
+    }
+    
     func test_request_when_has_queries() async {
         // Given
         let queries: [String : String] = ["name" : "Dark Souls"]
