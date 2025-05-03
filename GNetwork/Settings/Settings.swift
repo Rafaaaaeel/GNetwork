@@ -18,7 +18,7 @@ final public class Settings {
         
         public var secrets    : Secrets?
         
-        public var isPreview  : Bool = false
+        public var isPreview  : Bool = true
         
         private init() {}
         
